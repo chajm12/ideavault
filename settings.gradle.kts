@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "IdeaVolt"
+rootProject.name = "IdeaVault"
 include(":app")

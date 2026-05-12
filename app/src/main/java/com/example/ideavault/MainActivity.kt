@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.ideavault.data.local.database.IdeaDatabase
 import com.example.ideavault.presentation.navigation.NavGraph
-import com.example.ideavault.ui.theme.IdeaVoltTheme
+import com.example.ideavault.ui.theme.IdeaVaultTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         val database = IdeaDatabase.getDatabase(this)
         setContent {
-            IdeaVoltTheme {
+            IdeaVaultTheme {
                 NavGraph(database = database)
             }
         }
