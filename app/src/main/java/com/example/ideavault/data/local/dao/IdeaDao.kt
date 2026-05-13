@@ -14,7 +14,7 @@ interface IdeaDao {
     @Query("SELECT * FROM ideas ORDER BY createdAt DESC")
     fun getAllIdeasByDate(): Flow<List<IdeaEntity>>
 
-    @Query("SELECT * FROM ideas ORDER BY importance DESC")
+    @Query("SELECT * FROM ideas ORDER BY importance DESC, createdAt DESC")
     fun getAllIdeasByImportance(): Flow<List<IdeaEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

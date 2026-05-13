@@ -19,11 +19,11 @@ import com.example.ideavault.presentation.dashboard.DashboardViewModelFactory
 fun NavGraph(database: IdeaDatabase) {
     val navController = rememberNavController()
     val repository = IdeaRepositoryImpl(database.ideaDao())
-    val dashboardViewModel = viewModel<DashboardViewModel>(factory = DashboardViewModelFactory(repository))
 
     NavHost(navController = navController, startDestination = "dashboard") {
 
         composable("dashboard") {
+            val dashboardViewModel = viewModel<DashboardViewModel>(factory = DashboardViewModelFactory(repository))
             DashboardScreen(
                 viewModel = dashboardViewModel,
                 onIdeaClick = { ideaId -> navController.navigate("detail/$ideaId") }
